@@ -1,0 +1,12 @@
+﻿@model string
+@{
+    ViewData["Title"] = "Thank You";
+}
+
+<div class="thank-you-overlay">
+    <div class="thank-you-container">
+        <h3>Thank you, @Model!</h3>
+        <p>Your form has been submitted successfully.</p>
+        <button onclick="goBackToForm()">Close</button>
+    </div>
+</div>

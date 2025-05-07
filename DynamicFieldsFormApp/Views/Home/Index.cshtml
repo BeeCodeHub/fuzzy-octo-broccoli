@@ -1,0 +1,254 @@
+﻿@{
+    ViewData["Title"] = "Insurance Quote";
+}
+
+<div id="cookieConsentBanner" class="cookie-consent-banner">
+    <button id="closeBanner" style="background: none; border: none; color: #fff; font-size: 20px; position: absolute; top: 0; right: 0; cursor: pointer;">&times;</button>
+    <p>We use cookies to improve your experience. By using our site, you agree to our use of cookies. <a href="/privacy-policy" style="color: #f8f8f8;">Learn More</a></p>
+    <button id="acceptCookies" style="padding: 10px 20px; margin-left: 20px; background-color: #007BFF; color: white; border: none;">Accept</button>
+    <button id="declineCookies" style="padding: 10px 20px; margin-left: 20px; background-color: #D80073; color: white; border: none;">Decline</button>
+</div>
+
+@* <div class="header"> *@
+@*     <div class="container d-flex justify-content-center align-items-center"> *@
+@*         <img src="~/images/logo-floated.png" alt="Jag Logo" class="navbar-logo"> *@
+@*     </div> *@
+@* </div> *@
+
+<div class="content-container">
+    <div class="container d-flex justify-content-center align-items-center min-vh-100">
+        <div class="card shadow p-4 form-container" style="background-color: white; max-width: 500px; width: 100%;">
+
+            <h5 class="mb-4 text-center">
+                Please complete the form below for an obligation-free insurance quote from the insurance industry specialists<span class="pink-dot">.</span>
+            </h5>
+
+            <div class="step-timeline">
+                <ul class="timeline">
+                    <li class="timeline-item" id="step1Icon">
+                        <span class="step-icon">1</span>
+                    </li>
+                    <li class="timeline-item" id="step2Icon">
+                        <span class="step-icon">2</span>
+                    </li>
+                </ul>
+            </div>
+
+            <form id="insuranceQuote">
+                <div id="step1">
+                    <div class="mb-3">
+                        <label for="fullName" class="form-label">Full Name:</label>
+                        <input type="text" class="form-control" id="fullName" name="FullName" required>
+                        <div class="text-danger small text-center mt-1" id="fullNameWarning" style="display:none;">
+                            Please enter your full name (name and surname).
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="contactNumber" class="form-label">Contact Number:</label>
+                        <input type="tel" class="form-control" id="contactNumber" name="ContactNumber" required>
+                        <div class="text-danger small text-center mt-1" id="contactNumberWarning" style="display:none;">
+                            Please enter a valid South African contact number.
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="currentlyInsured" class="form-label">Are you currently insured?</label>
+                        <select id="currentlyInsured" class="form-select" name="Insured" required>
+                            <option value="">--Select--</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+
+                    <button type="button" id="nextStep" class="btn w-100 text-white" style="background-color: #D80073;">
+                        Next
+                    </button>
+                </div>
+
+                <div id="step2" style="display: none;">
+                    <div class="mb-3">
+                        <label for="insurer" class="form-label">Select Insurer:</label>
+                        <select id="insurer" class="form-select" name="Insurer">
+                            <option value="">--Select--</option>
+                            <option value="OUTsurance">OUTsurance</option>
+                            <option value="MiWay">MiWay</option>
+                            <option value="Ffw">First for Women</option>
+                            <option value="Auto-General">Auto & General</option>
+                            <option value="Budget">Budget</option>
+                            <option value="Momentum">Momentum</option>
+                            <option value="King-Price">King Price</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3" id="otherInsurerField" style="display:none;">
+                        <label for="otherInsurer" class="form-label">Other Insurer Name:</label>
+                        <input type="text" class="form-control" id="otherInsurer" name="OtherInsurer">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="policyNumber" class="form-label">Policy Number:</label>
+                        <input type="text" class="form-control" id="policyNumber" name="PolicyNumber">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="coverageType" class="form-label">Coverage Type:</label>
+                        <select id="coverageType" class="form-select" name="CoverageType">
+                            <option value="">--Select--</option>
+                            <option value="Comprehensive">Comprehensive</option>
+                            <option value="Third-Party">Third-Party</option>
+                            <option value="Fire-Theft">Fire & Theft</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="renewalDate" class="form-label">Renewal Date:</label>
+                        <input type="date" class="form-control" id="renewalDate" name="RenewalDate">
+                    </div>
+
+                    <div class="mb-3" id="uploadPolicyDocumentField" style="display:none;">
+                        <label for="policyDocument" class="form-label">Upload Policy Document (optional):</label>
+                        <input type="file" class="form-control" id="policyDocument" name="PolicyDocument">
+                        <div class="text-danger small text-center mt-1" id="policyDocumentWarning" style="display:none;">
+                            Please upload a valid document (PDF, DOCX, JPG, PNG).
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="quotePreference" class="form-label">Would You Like a Quote?</label>
+                        <select id="quotePreference" class="form-select" name="QuotePreference">
+                            <option value="">--Select--</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3" id="contactPreferences" style="display: none;">
+                        <label for="contactMethod" class="form-label">Preferred Contact Method:</label>
+                        <select id="contactMethod" class="form-select" name="ContactMethod">
+                            <option value="">--Select--</option>
+                            <option value="Phone">Phone</option>
+                            <option value="Email">Email</option>
+                            <option value="WhatsApp">WhatsApp</option>
+                        </select>
+
+                        <div class="mb-3" id="emailField" style="display: none;">
+                            <label for="email" class="form-label">Email Address:</label>
+                            <input type="email" class="form-control" id="email" name="Email">
+                            <div class="text-danger small text-center mt-1" id="emailAddressWarning" style="display: none;">
+                                Please enter a valid Email address.
+                            </div>
+                        </div>
+
+                        <div class="mb-3" id="whatsappField" style="display: none;">
+                            <label for="whatsapp" class="form-label">WhatsApp Number:</label>
+                            <input type="tel" class="form-control" id="whatsapp" name="WhatsAppNumber">
+                            <div class="text-danger small text-center mt-1" id="whatsappWarning" style="display: none;">
+                                Please enter a valid WhatsApp number.
+                            </div>
+                        </div>
+
+                        <label for="contactTime" class="form-label">Best Time to Contact:</label>
+                        <select id="contactTime" class="form-select" name="ContactTime">
+                            <option value="">--Select--</option>
+                            <option value="Morning">Morning</option>
+                            <option value="Afternoon">Afternoon</option>
+                            <option value="Evening">Evening</option>
+                        </select>
+
+                        <div class="mb-3">
+                            <label for="comments" id="comments" class="form-label">Comments or Additional Information (optional):</label>
+                            <textarea id="comments" class="form-control" name="Comments" rows="3"></textarea>
+                        </div>
+                        <div class="alert alert-danger text-center d-none" id="formErrorMessage">
+                            Please fill in all required fields before submitting.
+                        </div>
+                        @* <button type="button" id="prevStep" class="btn btn-secondary w-100 mb-2">Back</button> *@
+                    </div>
+                </div>
+
+                <!-- STEP 2 (If "No" Selected) -->
+                <div id="step3" style="display: none;">
+                    <div class="mb-3">
+                        <label for="noInsuranceReason" class="form-label">Reason for Not Being Insured:</label>
+                        <select id="noInsuranceReason" class="form-select" name="NoInsuranceReason">
+                            <option value="">--Select--</option>
+                            <option value="Too Expensive">Too Expensive</option>
+                            <option value="No Need">No Need</option>
+                            <option value="Looking for Options">Looking for Options</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="quotePreferenceStep3" class="form-label">Would You Like a Quote?</label>
+                        <select id="quotePreferenceStep3" class="form-select" name="QuotePreference">
+                            <option value="">--Select--</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3" id="contactPreferencesStep3" style="display: none;">
+                        <label for="contactMethodStep3" class="form-label">Preferred Contact Method:</label>
+                        <select id="contactMethodStep3" class="form-select" name="ContactMethod">
+                            <option value="">--Select--</option>
+                            <option value="Phone">Phone</option>
+                            <option value="Email">Email</option>
+                            <option value="WhatsApp">WhatsApp</option>
+                        </select>
+
+                        <div class="mb-3" id="emailFieldStep3" style="display: none;">
+                            <label for="emailStep3" class="form-label">Email Address:</label>
+                            <input type="email" class="form-control" id="emailStep3" name="Email3">
+                            <div class="text-danger small text-center mt-1" id="emailAddressWarningStep3" style="display: none;">
+                                Please enter a valid Email address.
+                            </div>
+                        </div>
+
+                        <div class="mb-3" id="whatsappFieldStep3" style="display: none;">
+                            <label for="whatsappStep3" class="form-label">WhatsApp Number:</label>
+                            <input type="tel" class="form-control" id="whatsappStep3" name="WhatsAppNumber3">
+                            <div class="text-danger small text-center mt-1" id="whatsappWarningStep3" style="display: none;">
+                                Please enter a valid WhatsApp number.
+                            </div>
+                        </div>
+
+                        <label for="contactTimeStep3" class="form-label">Best Time to Contact:</label>
+                        <select id="contactTimeStep3" class="form-select" name="ContactTime">
+                            <option value="">--Select--</option>
+                            <option value="Morning">Morning</option>
+                            <option value="Afternoon">Afternoon</option>
+                            <option value="Evening">Evening</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="comments" id="comments" class="form-label">Comments or Additional Information (optional):</label>
+                        <textarea id="comments" class="form-control" name="Comments" rows="3"></textarea>
+                    </div>
+                    <div class="alert alert-danger text-center d-none" id="formErrorMessage">
+                        Please fill in all required fields before submitting.
+                    </div>
+                </div>
+
+                <div class="mb-3 form-check" id="termsCheckboxWrapper" style="display: none;">
+                    <input type="checkbox" class="form-check-input" id="termsCheckbox" name="TermsAccepted" required>
+                    <label class="form-check-label" for="termsCheckbox">
+                        I agree to the <a href="your-terms-url" target="_blank">Terms & Conditions</a>.
+                    </label>
+                    <div class="text-danger small text-center mt-1" id="termsWarning" style="display:none;">
+                        You must agree to the Terms & Conditions before submitting.
+                    </div>
+                </div>
+
+                <button type="button" id="prevStep" class="btn btn-secondary w-100 mb-2">Back</button>
+
+                <button type="submit" id="submitButton" class="btn w-100 text-white" style="background-color: #D80073;">
+                    Submit
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

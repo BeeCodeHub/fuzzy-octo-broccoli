@@ -1,0 +1,74 @@
+[
+  {
+    "outputFileName": "wwwroot/css/site.min.css",
+    "inputFiles": [
+      "wwwroot/css/site.css"
+    ],
+    "minify": {
+      "enabled": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/css/styles.min.css",
+    "inputFiles": [
+      "wwwroot/css/styles.css"
+    ],
+    "minify": {
+      "enabled": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/css/thank-you.min.css",
+    "inputFiles": [
+      "wwwroot/css/thank-you.css"
+    ],
+    "minify": {
+      "enabled": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/js/site.min.js",
+    "inputFiles": [
+      "wwwroot/js/site.js"
+    ],
+    "minify": {
+      "enabled": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/js/insuranceQuoteForm.min.js",
+    "inputFiles": [
+      "wwwroot/js/insuranceQuoteForm.js"
+    ],
+    "minify": {
+      "enabled": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/js/validations.min.js",
+    "inputFiles": [
+      "wwwroot/js/validations.js"
+    ],
+    "minify": {
+      "enabled": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/js/sessionAndCookieManagement.min.js",
+    "inputFiles": [
+      "wwwroot/js/sessionAndCookieManagement.js"
+    ],
+    "minify": {
+      "enabled": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/js/thankYou.min.js",
+    "inputFiles": [
+      "wwwroot/js/thankYou.js"
+    ],
+    "minify": {
+      "enabled": true
+    }
+  }
+]
