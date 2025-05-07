@@ -8,3 +8,5 @@
 # Ignore build results
 bin/
 obj/
+
+.fake
