@@ -14,8 +14,8 @@
     <PackageReference Include="BuildBundlerMinifier" Version="3.2.449" />
   </ItemGroup>
 
-  <Target Name="MyBundleMinify" AfterTargets="Build">
+  <!-- <Target Name="MyBundleMinify" AfterTargets="Build">
 	<Exec Command="dotnet bundle" />
-  </Target>
+  </Target> -->
 
 </Project>

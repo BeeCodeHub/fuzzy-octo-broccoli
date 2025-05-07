@@ -1,8 +1,9 @@
+﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.5.2.0
+VisualStudioVersion = 17.13.35806.99
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicFieldsFormApp", "DynamicFieldsFormApp.csproj", "{BE9FDAAB-1BB8-62E6-FF38-ECC8D238E493}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicFieldsFormApp", "DynamicFieldsFormApp\DynamicFieldsFormApp.csproj", "{206AE528-5FFC-43FA-9E8B-A4B782684D30}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -10,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{BE9FDAAB-1BB8-62E6-FF38-ECC8D238E493}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BE9FDAAB-1BB8-62E6-FF38-ECC8D238E493}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BE9FDAAB-1BB8-62E6-FF38-ECC8D238E493}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BE9FDAAB-1BB8-62E6-FF38-ECC8D238E493}.Release|Any CPU.Build.0 = Release|Any CPU
+		{206AE528-5FFC-43FA-9E8B-A4B782684D30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{206AE528-5FFC-43FA-9E8B-A4B782684D30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{206AE528-5FFC-43FA-9E8B-A4B782684D30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{206AE528-5FFC-43FA-9E8B-A4B782684D30}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {02C4FF44-ADA0-4DDC-B973-523C2F8DB598}
+		SolutionGuid = {EB7CE41F-3863-4CAB-B261-965E3CB0B0CC}
 	EndGlobalSection
 EndGlobal
